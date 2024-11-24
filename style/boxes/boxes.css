@@ -1,0 +1,32 @@
+.box-body {
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.box-rim {
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.box01 .box-body {
+    background-image: url("box.01.body.svg"); 
+}
+.box01 .box-rim {
+    background-image: url("box.01.lid.svg"); 
+}
+
+.box02 .box-body {
+    background-image: url("box.02.body.svg"); 
+}
+.box02 .box-rim {
+    background-image: url("box.02.lid.svg"); 
+}
+
+.box03 .box-body {
+    background-image: url("box.03.body.svg"); 
+}
+.box03 .box-rim {
+    background-image: url("box.03.lid.svg"); 
+}

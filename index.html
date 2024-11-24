@@ -1,0 +1,150 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="style/themes/theme.css">
+        <link rel="stylesheet" href="style/boxes/boxes.css">
+        <link rel="stylesheet" href="style/themes/snowflakes.css">
+
+        <link rel="stylesheet" href="style/colours.css">
+        <link rel="stylesheet" href="style/giftbox.css">
+        <link rel="stylesheet" href="style/input.css">
+	</head>
+	<body class="black">
+        <div class="theme snowfall">
+            <div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+            </div>
+        </div>
+		<h1 class='text-light center'>Wrap a Gift</h1>
+		<div class="circle" onclick="open_gift()">
+			<div class="box box01">
+				<div id='box-body' class="box-body open">
+				  <a class="gift-link" href="#" target="_blank">
+				  <img class="gift-image img" src="style/default_gift.svg">
+				  </a>
+				  <div class="box-lid">
+					<div class="box-bowtie"></div>
+					<div class="box-rim"></div>
+				  </div>
+				</div>
+			  </div>
+		</div>
+        <div>
+            <h1>Settings</h1>
+            <form>
+                <fieldset>
+                    <legend>Theme</legend>
+                    <label for="opt-salutation">Salutation</label>
+                    <input type="text" id="opt-salutation" placeholder="Salutation Text"/>
+                    <label for="opt-background">Background</label>
+                    <select id="opt-background" onchange="change_background(event)">
+                        <option>None</option>
+                        <option value="snowfall">Snowing</option>
+                        <option>Halloween</option>
+                    </select>
+                    <label for="opt-box">Box</label>
+                    <select id="opt-box" onchange="change_box(event)">
+                        <option value="box01">Red</option>
+                        <option value="box02">Blue</option>
+                        <option value="box03">Green</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Gift</legend>
+                    <label for="opt-image">Image</label>
+                    <input type="text" id="opt-image" placeholder="url to item art" onchange="change_image(event)"/>
+                    <label for="opt-link">Link</label>
+                    <input type="text" id="opt-link" placeholder="url to product listing" onchange="change_link(event)"/>
+                </fieldset>
+
+                <div style="text-align: center; padding: 16px;">
+                    <button type="button" class="accept" onclick="copy_dumb_link()">Copy Link URL</button>
+                    <button type="button" class="accept" onclick="copy_smart_link()">Copy Link for Outlook</button>
+                </div>
+            </form>
+        </div>
+		<script src="src/giftbox.js"></script>
+        <script src="src/theme.js"></script>
+        <script>
+function change_background(e) {
+    var theme_name = e.target.value;
+    set_background(theme_name);
+}
+
+function change_box(e) {
+    var boxid = e.target.value;
+    set_box(boxid);
+}
+
+function change_link(e) {
+    var href = e.target.value;
+    console.log(href);
+    document.querySelector(".gift-link").href = href;
+}
+
+function change_image(e) {
+    var href = e.target.value;
+    document.querySelector(".gift-image").src = href;
+}
+
+function make_link() {
+    var base_url = window.location.origin;
+    var path = window.location.pathname.split( '/' ); path.pop();
+    base_url = base_url + path.join('/') + "/open.html";
+
+    return  base_url 
+            + "?" + "bg=" + encodeURIComponent(document.getElementById("opt-background").value)
+            + "&" + "box=" + encodeURIComponent(document.getElementById("opt-box").value)
+            + "&" + "title=" + encodeURIComponent(document.getElementById("opt-salutation").value) 
+            ;
+}
+
+function copy_dumb_link() {
+    var url = make_link();
+
+    const clipboardItem = new ClipboardItem({
+        "text/plain": new Blob(
+            [url],
+            { type: "text/plain" }
+        )
+    });
+
+    navigator.clipboard.write([clipboardItem]);
+
+    alert("Link copied to clipboard.");
+}
+
+function copy_smart_link() {
+    var name = "open your gift";
+    var url = make_link();
+
+    var elem = document.createElement("a");
+    elem.href = url;
+    elem.innerText = name;
+
+    const clipboardItem = new ClipboardItem({
+        "text/plain": new Blob(
+            [elem.innerText],
+            { type: "text/plain" }
+        ),
+        "text/html": new Blob(
+            [elem.outerHTML],
+            { type: "text/html" }
+        ),
+    });
+
+    navigator.clipboard.write([clipboardItem]);
+
+    alert("Link copied to clipboard.");
+}
+        </script>
+	</body>
+</html>

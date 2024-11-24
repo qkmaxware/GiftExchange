@@ -1,0 +1,46 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="style/themes/theme.css">
+        <link rel="stylesheet" href="style/boxes/boxes.css">
+        <link rel="stylesheet" href="style/themes/snowflakes.css">
+
+        <link rel="stylesheet" href="style/colours.css">
+        <link rel="stylesheet" href="style/giftbox.css">
+        <link rel="stylesheet" href="style/input.css">
+	</head>
+	<body class="black">
+        <div class="theme snowfall">
+            <div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+            </div>
+        </div>
+		<h1 class='text-light center'></h1>
+		<div class="circle" onclick="open_gift()">
+			<div class="box box01">
+				<div id='box-body' class="box-body">
+				  <a class="gift-link" href="#" target="_blank">
+				  <img class="gift-image img" src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-curve-screen-gaming-monitor-device-png-image_10206079.png">
+				  </a>
+				  <div class="box-lid">
+					<div class="box-bowtie"></div>
+					<div class="box-rim"></div>
+				  </div>
+				</div>
+			  </div>
+		</div>
+		<h3 class='text-light center'>Click to Open</h3>
+		<script src="src/giftbox.js"></script>
+		<script src="src/theme.js"></script>
+		<script>
+			set_theme_from_queryparams();
+		</script>
+	</body>
+</html>
