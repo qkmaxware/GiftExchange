@@ -9,6 +9,20 @@ function set_theme_from_queryparams() {
 
     var box_theme = params.get("box");
     if (box_theme) set_box(box_theme);
+
+    set_gift(params.get("img"), params.get("url"));
+}
+
+function set_gift(image, link) {
+    var linky = document.querySelector(".gift-link");
+    var imagey = document.querySelector(".gift-image");
+
+    if (image && image.length > 0) {
+        imagey.src = image;
+    }
+    if (link && link.length > 0) {
+        linky.href = link;
+    }
 }
 
 function set_salutation(text) {
