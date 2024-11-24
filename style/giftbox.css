@@ -53,9 +53,13 @@
     transform: translateY(0%);
     transition: all 0.5s;
     transition-delay: 0.5s;
-    margin: 0 auto;
+    margin: 0px auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
     display: block;
     z-index: 0;
+    mix-blend-mode: multiply;
+    background-color: transparent;
 }
 
 .box-body.open {
