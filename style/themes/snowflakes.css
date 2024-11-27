@@ -1,11 +1,4 @@
 .theme.snowfall {
-    position: fixed;
-    z-index: -100;
-    left: 0;
-    top: 0;
-    width: 100dvw;
-    height: 100dvh;
-    
     background: #fff;
     background: -moz-linear-gradient(360deg, #fff 12%, rgba(0,103,171,1) 42%, rgba(0,53,88,1) 100%);
     background: -webkit-linear-gradient(360deg, #fff 12%, rgba(0,103,171,1) 42%, rgba(0,53,88,1) 100%);

@@ -1,8 +1,12 @@
 <html>
 	<head>
+        <title>Wrap A Gift</title>
+        <meta charset="UTF-8">
+
         <link rel="stylesheet" href="style/themes/theme.css">
         <link rel="stylesheet" href="style/boxes/boxes.css">
         <link rel="stylesheet" href="style/themes/snowflakes.css">
+        <link rel="stylesheet" href="style/themes/waves.css">
 
         <link rel="stylesheet" href="style/colours.css">
         <link rel="stylesheet" href="style/giftbox.css">
@@ -22,6 +26,12 @@
                 <div class="snowflake">❄</div>
             </div>
         </div>
+        <div class="theme waves">
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+		</div>
+        
 		<h1 class='text-light center'>Wrap a Gift</h1>
 		<div class="circle" onclick="open_gift()">
 			<div class="box box01">
@@ -47,6 +57,7 @@
                     <select id="opt-background" onchange="change_background(event)">
                         <option>None</option>
                         <option value="snowfall">Snowing</option>
+                        <option value="waves">Waves</option>
                     </select>
                     <label for="opt-box">Box</label>
                     <select id="opt-box" onchange="change_box(event)">
