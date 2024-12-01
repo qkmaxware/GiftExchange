@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style/boxes/boxes.css">
         <link rel="stylesheet" href="style/themes/snowflakes.css">
         <link rel="stylesheet" href="style/themes/waves.css">
+        <link rel="stylesheet" href="style/themes/balloons.css">
 
         <link rel="stylesheet" href="style/colours.css">
         <link rel="stylesheet" href="style/giftbox.css">
@@ -31,6 +32,19 @@
 			<div class="wave"></div>
 			<div class="wave"></div>
 		</div>
+        <div class="theme balloons">
+            <div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+        </div>
         
 		<h1 class='text-light center'>Wrap a Gift</h1>
 		<div class="circle" onclick="open_gift()">
@@ -58,6 +72,7 @@
                         <option>None</option>
                         <option value="snowfall">Snowing</option>
                         <option value="waves">Waves</option>
+                        <option value="balloons">Balloons</option>
                     </select>
                     <label for="opt-box">Box</label>
                     <select id="opt-box" onchange="change_box(event)">
